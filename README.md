@@ -75,4 +75,117 @@ Covers:
 ---
 
 ## 🗂️ Project Structure
+├── app.py
+├── power_model.h5
+├── scaler_features.pkl
+├── scaler_target.pkl
+├── requirements.txt
+├── Procfile
+├── templates/
+│ ├── base.html
+│ ├── predict.html
+│ ├── guidance.html
+│ ├── awareness.html
+│ ├── analysis.html
+│ ├── about.html
+├── static/
+│ ├── css/
+│ ├── js/
+│ ├── assets/
+├── README.md
 
+
+---
+
+## ⚙️ Tech Stack
+
+### Frontend
+- HTML5, CSS3, Bootstrap 5  
+- Chart.js  
+
+### Backend
+- Python 3.11  
+- Flask  
+- Pandas, NumPy  
+- TensorFlow/Keras  
+- scikit-learn  
+
+### Deployment
+- Railway  
+- Gunicorn  
+- Works with Docker (optional)  
+
+---
+
+## 📥 How to Run Locally
+
+### 1️⃣ Clone Repository
+```bash
+git clone https://github.com/your-username/energy-consumption.git
+cd energy-consumption
+pip install -r requirements.txt
+python app.py
+http://127.0.0.1:5000/
+
+## 📊 Dataset Details
+
+Dataset contains **5-minute interval energy consumption (2021–2024)** along with **weather features**.
+
+### **Features Used**
+
+| Feature        | Description                          |
+|----------------|--------------------------------------|
+| Power demand   | Historical consumption (target)      |
+| Temperature    | Ambient temperature                  |
+| Dew Point      | Atmospheric dew point                |
+| Humidity       | Relative humidity (%)                |
+| Wind Direction | Direction of wind                    |
+| Wind Speed     | Speed of wind                        |
+| Pressure       | Atmospheric pressure                 |
+
+Weather features significantly influence energy load patterns, helping improve prediction accuracy.
+
+---
+
+## 🧠 Model Training Methodology
+
+- Uses **30-step sliding window** for time-series forecasting  
+- Features scaled using **MinMaxScaler**  
+- Model Architecture: **Deep Learning Hybrid (LSTM + CNN blend)**  
+- Optimizer: **Adam**  
+- Loss Function: **Mean Squared Error (MSE)**  
+- Output: **1 predicted value** → next 5-minute energy demand  
+
+---
+
+## 🌐 Deployment Notes
+
+- `.keras` models may break in cloud environments  
+- `.h5` format is **universally compatible** → recommended for production  
+- Supported Deployment Platforms:  
+  - **Railway**  
+  - **Render**  
+  - **Docker**  
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!  
+Feel free to open an **Issue** or **Pull Request** to improve:
+- UI/UX  
+- Model performance  
+- Dataset quality  
+- Documentation  
+
+---
+
+## 📄 License
+
+Released under the **MIT License**.
+
+---
+
+## ⭐ Support
+
+If this project helped you, consider giving the repository a **🌟 star** — it really motivates future improvements!
